@@ -33,22 +33,56 @@ extension UITableView {
 extension UITableView {
     
     @objc func swizzledReloadData() {
-        
+        swizzledReloadData()
+        reloadPlaceholder()
     }
     
     @objc func swizzledEndUpdates() {
-        
+        swizzledEndUpdates()
+        reloadPlaceholder()
     }
     
     @available(iOS 11.0, *)
     @objc func swizzledPerformBatchUpdates(_ updates: (() -> Void)?, completion: ((Bool) -> Void)?) {
+        swizzledPerformBatchUpdates(updates) { [weak self] finished in
+            completion?(finished)
+            self?.reloadPlaceholder()
+        }
+    }
+}
+
+private var tableViewPlaceholderView: UInt8 = 0
+
+extension UITableView {
+    
+    var placeholderView: PlaceholderView? {
+        get {
+            return objc_getAssociatedObject(self, &tableViewPlaceholderView) as? PlaceholderView
+        }
+        set {
+            objc_setAssociatedObject(self, &tableViewPlaceholderView, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    func reloadPlaceholder() {
+        
+    }
+    
+    func handlingInvalidPlaceholder() {
         
     }
 }
 
 extension UITableView {
     
-    func handlingInvalidPlaceholder() {
-        
+    private func cellsCount() -> Int {
+        var count = 0
+        if let dataSource = dataSource {
+            let sections = dataSource.numberOfSections?(in: self) ?? 0
+            for section in 0..<sections {
+                count += dataSource.tableView(self, numberOfRowsInSection: section)
+            }
+        }
+        return count
     }
 }

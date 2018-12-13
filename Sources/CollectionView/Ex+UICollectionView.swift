@@ -26,17 +26,50 @@ extension UICollectionView {
 extension UICollectionView {
     
     @objc func swizzledReloadData() {
-        
+        swizzledReloadData()
+        reloadPlaceholder()
     }
     
     @objc func swizzledPerformBatchUpdates(_ updates: (() -> Void)?, completion: ((Bool) -> Void)?) {
+        swizzledPerformBatchUpdates(updates) { [weak self] finished in
+            completion?(finished)
+            self?.reloadPlaceholder()
+        }
+    }
+}
+
+private var collectionViewPlaceholderView: UInt8 = 0
+
+extension UICollectionView {
+    
+    var placeholderView: PlaceholderView? {
+        get {
+            return objc_getAssociatedObject(self, &collectionViewPlaceholderView) as? PlaceholderView
+        }
+        set {
+            objc_setAssociatedObject(self, &collectionViewPlaceholderView, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    func reloadPlaceholder() {
+        
+    }
+    
+    func handlingInvalidPlaceholder() {
         
     }
 }
 
 extension UICollectionView {
     
-    func handlingInvalidPlaceholder() {
-        
+    private func cellsCount() -> Int {
+        var count = 0
+        if let dataSource = dataSource {
+            let sections = dataSource.numberOfSections?(in: self) ?? 0
+            for section in 0..<sections {
+                count += dataSource.collectionView(self, numberOfItemsInSection: section)
+            }
+        }
+        return count
     }
 }

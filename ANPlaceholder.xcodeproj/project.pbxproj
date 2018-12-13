@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0F0E7AC21C23719009E9BF7 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */; };
+		A0F0E7AE21C23F0A009E9BF7 /* PlaceholderConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */; };
 		A0FF02DD21C20E6B00899B08 /* ANPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0FF02DB21C20E6B00899B08 /* ANPlaceholder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0FF02E421C20F6600899B08 /* SwizzleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02E321C20F6600899B08 /* SwizzleHelper.swift */; };
 		A0FF02E721C21E1700899B08 /* PlaceholderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02E521C21E1600899B08 /* PlaceholderBase.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderConst.swift; sourceTree = "<group>"; };
 		A0FF02D821C20E6B00899B08 /* ANPlaceholder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ANPlaceholder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FF02DB21C20E6B00899B08 /* ANPlaceholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANPlaceholder.h; sourceTree = "<group>"; };
 		A0FF02DC21C20E6B00899B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			children = (
 				A0FF02E521C21E1600899B08 /* PlaceholderBase.swift */,
 				A0FF02E621C21E1700899B08 /* PlaceholderCompatible.swift */,
+				A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */,
+				A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -204,8 +210,10 @@
 				A0FF02F021C21F9D00899B08 /* Ex+UICollectionView.swift in Sources */,
 				A0FF02E721C21E1700899B08 /* PlaceholderBase.swift in Sources */,
 				A0FF02FC21C2303400899B08 /* WeakObjectContainer.swift in Sources */,
+				A0F0E7AE21C23F0A009E9BF7 /* PlaceholderConst.swift in Sources */,
 				A0FF02E421C20F6600899B08 /* SwizzleHelper.swift in Sources */,
 				A0FF02EA21C21EC300899B08 /* TableView+Placeholder.swift in Sources */,
+				A0F0E7AC21C23719009E9BF7 /* PlaceholderView.swift in Sources */,
 				A0FF02EC21C21EEB00899B08 /* CollectionView+Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

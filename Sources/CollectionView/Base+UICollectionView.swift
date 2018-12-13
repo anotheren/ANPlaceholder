@@ -44,4 +44,17 @@ extension PlaceholderBase where Base: UICollectionView {
             }
         }
     }
+    
+    public var isVisible: Bool {
+        get {
+            if let placeholderView = base.placeholderView {
+                return !placeholderView.isHidden
+            }
+            return false
+        }
+    }
+    
+    public func updateIfNeeded() {
+        base.reloadPlaceholder()
+    }
 }
