@@ -17,6 +17,7 @@
 		A0FF02F021C21F9D00899B08 /* Ex+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02EF21C21F9D00899B08 /* Ex+UICollectionView.swift */; };
 		A0FF02F221C2208500899B08 /* Base+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02F121C2208500899B08 /* Base+UITableView.swift */; };
 		A0FF02F421C2209100899B08 /* Base+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02F321C2209100899B08 /* Base+UICollectionView.swift */; };
+		A0FF02FC21C2303400899B08 /* WeakObjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02FB21C2303400899B08 /* WeakObjectContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A0FF02F321C2209100899B08 /* Base+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Base+UICollectionView.swift"; sourceTree = "<group>"; };
 		A0FF02F921C2220700899B08 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A0FF02FA21C2220700899B08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A0FF02FB21C2303400899B08 /* WeakObjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakObjectContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A0FF02E321C20F6600899B08 /* SwizzleHelper.swift */,
+				A0FF02FB21C2303400899B08 /* WeakObjectContainer.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				A0FF02F421C2209100899B08 /* Base+UICollectionView.swift in Sources */,
 				A0FF02F021C21F9D00899B08 /* Ex+UICollectionView.swift in Sources */,
 				A0FF02E721C21E1700899B08 /* PlaceholderBase.swift in Sources */,
+				A0FF02FC21C2303400899B08 /* WeakObjectContainer.swift in Sources */,
 				A0FF02E421C20F6600899B08 /* SwizzleHelper.swift in Sources */,
 				A0FF02EA21C21EC300899B08 /* TableView+Placeholder.swift in Sources */,
 				A0FF02EC21C21EEB00899B08 /* CollectionView+Placeholder.swift in Sources */,
@@ -345,7 +349,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +378,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
