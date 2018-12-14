@@ -89,7 +89,7 @@ final class PlaceholderView: UIView {
     func setupConstraints() {
         if let customView = customView {
             customView.snp.makeConstraints { maker in
-                maker.edges.equalTo(layoutGuide.snp.edges)
+                maker.edges.equalTo(contentView.snp.edges)
             }
         } else {
             var showedViews = [UIView]()

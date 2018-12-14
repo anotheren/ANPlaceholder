@@ -77,8 +77,7 @@ extension UICollectionView: PlaceholderViewAddable {
             if let view = self.placeholderView {
                 return view
             } else {
-                let view = PlaceholderView(frame: .zero)
-                view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                let view = PlaceholderView(frame: bounds)
                 view.isHidden = true
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapPlaceholderView(_:)))
                 view.addGestureRecognizer(tapGesture)
@@ -96,10 +95,6 @@ extension UICollectionView: PlaceholderViewAddable {
             } else {
                 addSubview(placeholderView)
             }
-        }
-        
-        placeholderView.snp.makeConstraints { maker in
-            maker.edges.equalTo(snp.edges)
         }
         
         placeholderView.prepareForDisplay()
@@ -120,7 +115,7 @@ extension UICollectionView: PlaceholderViewAddable {
         }
         
         placeholderView.backgroundColor = dataSource.backgroundColorForPlaceholder(in: self)
-        placeholderView.isHidden = true
+        placeholderView.isHidden = false
         placeholderView.clipsToBounds = true
         placeholderView.tapGesture?.isEnabled = placeholder.delegate?.placeholderTapEnabled(in: self) ?? DefaultValue.tapEnabled
         isScrollEnabled = placeholder.delegate?.placeholderScrollEnabled(in: self) ?? DefaultValue.scrollEnabled
