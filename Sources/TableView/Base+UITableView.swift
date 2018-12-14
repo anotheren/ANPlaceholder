@@ -30,7 +30,7 @@ extension PlaceholderBase where Base: UITableView {
                     UITableView.swizzlePerformBatchUpdates
                 }
             } else {
-                base.handlingInvalidPlaceholder()
+                base.invalidPlaceholder()
             }
         }
     }

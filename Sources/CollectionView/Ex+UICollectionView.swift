@@ -41,7 +41,18 @@ extension UICollectionView {
 
 private var collectionViewPlaceholderViewKey: UInt8 = 0
 
-extension UICollectionView {
+extension UICollectionView: PlaceholderViewAddable {
+    
+    var cellsCount: Int {
+        var count = 0
+        if let dataSource = dataSource {
+            let sections = dataSource.numberOfSections?(in: self) ?? 0
+            for section in 0..<sections {
+                count += dataSource.collectionView(self, numberOfItemsInSection: section)
+            }
+        }
+        return count
+    }
     
     var placeholderView: PlaceholderView? {
         get {
@@ -55,9 +66,9 @@ extension UICollectionView {
     func reloadPlaceholder() {
         guard let dataSource = placeholder.dataSource else { return }
         let shouldDisplay = placeholder.delegate?.placeholderShouldDisplay(in: self) ?? DefaultValue.shouldDisplay
-        guard shouldDisplay && cellsCount() == 0 else {
+        guard shouldDisplay && cellsCount == 0 else {
             if placeholder.isVisible {
-                handlingInvalidPlaceholder()
+                invalidPlaceholder()
             }
             return
         }
@@ -120,7 +131,7 @@ extension UICollectionView {
         placeholder.delegate?.placeholderDidAppear(in: self)
     }
     
-    func handlingInvalidPlaceholder() {
+    func invalidPlaceholder() {
         placeholder.delegate?.placeholderWillDisappear(in: self)
         placeholderView?.reset()
         placeholderView?.removeFromSuperview()
@@ -134,16 +145,5 @@ extension UICollectionView {
     
     @objc private func didTapPlaceholderView(_ sender: UITapGestureRecognizer) {
         placeholder.delegate?.placeholderDidTap(in: self)
-    }
-    
-    private func cellsCount() -> Int {
-        var count = 0
-        if let dataSource = dataSource {
-            let sections = dataSource.numberOfSections?(in: self) ?? 0
-            for section in 0..<sections {
-                count += dataSource.collectionView(self, numberOfItemsInSection: section)
-            }
-        }
-        return count
     }
 }

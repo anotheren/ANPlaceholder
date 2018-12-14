@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0C1DA7F21C355BA004E9627 /* PlaceholderViewAddable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1DA7E21C355BA004E9627 /* PlaceholderViewAddable.swift */; };
 		A0F0E7AC21C23719009E9BF7 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */; };
 		A0F0E7AE21C23F0A009E9BF7 /* PlaceholderConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */; };
 		A0F0E7B021C254AA009E9BF7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = A0F0E7AF21C254AA009E9BF7 /* Cartfile */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0C1DA7E21C355BA004E9627 /* PlaceholderViewAddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewAddable.swift; sourceTree = "<group>"; };
 		A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderConst.swift; sourceTree = "<group>"; };
 		A0F0E7AF21C254AA009E9BF7 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				A0FF02E521C21E1600899B08 /* PlaceholderBase.swift */,
 				A0FF02E621C21E1700899B08 /* PlaceholderCompatible.swift */,
+				A0C1DA7E21C355BA004E9627 /* PlaceholderViewAddable.swift */,
 				A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */,
 				A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */,
 			);
@@ -231,6 +234,7 @@
 				A0FF02EA21C21EC300899B08 /* TableView+Placeholder.swift in Sources */,
 				A0F0E7AC21C23719009E9BF7 /* PlaceholderView.swift in Sources */,
 				A0FF02EC21C21EEB00899B08 /* CollectionView+Placeholder.swift in Sources */,
+				A0C1DA7F21C355BA004E9627 /* PlaceholderViewAddable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

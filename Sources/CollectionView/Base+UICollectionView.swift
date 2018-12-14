@@ -27,7 +27,7 @@ extension PlaceholderBase where Base: UICollectionView {
                 UICollectionView.swizzleReloadData
                 UICollectionView.swizzlePerformBatchUpdates
             } else {
-                base.handlingInvalidPlaceholder()
+                base.invalidPlaceholder()
             }
         }
     }

@@ -54,7 +54,18 @@ extension UITableView {
 
 private var tableViewPlaceholderViewKey: UInt8 = 0
 
-extension UITableView {
+extension UITableView: PlaceholderViewAddable {
+    
+    var cellsCount: Int {
+        var count = 0
+        if let dataSource = dataSource {
+            let sections = dataSource.numberOfSections?(in: self) ?? 0
+            for section in 0..<sections {
+                count += dataSource.tableView(self, numberOfRowsInSection: section)
+            }
+        }
+        return count
+    }
     
     var placeholderView: PlaceholderView? {
         get {
@@ -68,9 +79,9 @@ extension UITableView {
     func reloadPlaceholder() {
         guard let dataSource = placeholder.dataSource else { return }
         let shouldDisplay = placeholder.delegate?.placeholderShouldDisplay(in: self) ?? DefaultValue.shouldDisplay
-        guard shouldDisplay && cellsCount() == 0 else {
+        guard shouldDisplay && cellsCount == 0 else {
             if placeholder.isVisible {
-                handlingInvalidPlaceholder()
+                invalidPlaceholder()
             }
             return
         }
@@ -133,7 +144,7 @@ extension UITableView {
         placeholder.delegate?.placeholderDidAppear(in: self)
     }
     
-    func handlingInvalidPlaceholder() {
+    func invalidPlaceholder() {
         placeholder.delegate?.placeholderWillDisappear(in: self)
         placeholderView?.reset()
         placeholderView?.removeFromSuperview()
@@ -147,16 +158,5 @@ extension UITableView {
     
     @objc private func didTapPlaceholderView(_ sender: UITapGestureRecognizer) {
         placeholder.delegate?.placeholderDidTap(in: self)
-    }
-    
-    private func cellsCount() -> Int {
-        var count = 0
-        if let dataSource = dataSource {
-            let sections = dataSource.numberOfSections?(in: self) ?? 0
-            for section in 0..<sections {
-                count += dataSource.tableView(self, numberOfRowsInSection: section)
-            }
-        }
-        return count
     }
 }
