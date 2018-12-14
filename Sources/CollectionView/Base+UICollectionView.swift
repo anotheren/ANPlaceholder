@@ -17,13 +17,13 @@ extension PlaceholderBase where Base: UICollectionView {
     
     public var dataSource: CollectionViewPlaceholderDataSource? {
         get {
-            let container = objc_getAssociatedObject(self, &collectionViewPlaceholderDataSourceKey) as? WeakObjectContainer
+            let container = objc_getAssociatedObject(base, &collectionViewPlaceholderDataSourceKey) as? WeakObjectContainer
             return container?.object as? CollectionViewPlaceholderDataSource
         }
         nonmutating set {
             if let newValue = newValue {
                 let container = WeakObjectContainer(object: newValue)
-                objc_setAssociatedObject(self, &collectionViewPlaceholderDataSourceKey, container, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                objc_setAssociatedObject(base, &collectionViewPlaceholderDataSourceKey, container, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 UICollectionView.swizzleReloadData
                 UICollectionView.swizzlePerformBatchUpdates
             } else {
@@ -34,13 +34,13 @@ extension PlaceholderBase where Base: UICollectionView {
     
     public var delegate: CollectionViewPlaceholderDelegate? {
         get {
-            let container = objc_getAssociatedObject(self, &collectionViewPlaceholderDelegateKey) as? WeakObjectContainer
+            let container = objc_getAssociatedObject(base, &collectionViewPlaceholderDelegateKey) as? WeakObjectContainer
             return container?.object as? CollectionViewPlaceholderDelegate
         }
         nonmutating set {
             if let newValue = newValue {
                 let container = WeakObjectContainer(object: newValue)
-                objc_setAssociatedObject(self, &collectionViewPlaceholderDelegateKey, container, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                objc_setAssociatedObject(base, &collectionViewPlaceholderDelegateKey, container, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }
