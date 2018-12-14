@@ -45,7 +45,25 @@ extension ViewController: CollectionViewPlaceholderDataSource {
 
 extension ViewController: CollectionViewPlaceholderDelegate {
     
+    func placeholderDidTap(in collectionView: UICollectionView) {
+        print("placeholderDidTap")
+    }
     
+    func placeholderWillAppear(in collectionView: UICollectionView) {
+        print("placeholderWillAppear")
+    }
+    
+    func placeholderDidAppear(in collectionView: UICollectionView) {
+        print("placeholderDidAppear")
+    }
+    
+    func placeholderWillDisappear(in collectionView: UICollectionView) {
+        print("placeholderWillDisappear")
+    }
+    
+    func placeholderDidDisappear(in collectionView: UICollectionView) {
+        print("placeholderDidDisappear")
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -58,13 +76,8 @@ extension ViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         return cell
     }
-    
-    
 }
 
-
 extension ViewController: UICollectionViewDelegate {
-    
-    
     
 }
