@@ -10,9 +10,10 @@ import Foundation
 
 struct DefaultValue {
     
-    static let verticalOffset: CGFloat = 0
-    static let verticalSpace: CGFloat = 12
-    static let verticalSpaces = [verticalSpace, verticalSpace]
     static let titleMargin: CGFloat = 15
     static let descriptionMargin: CGFloat = 15
+    
+    static let shouldDisplay: Bool = true
+    static let tapEnabled: Bool = true
+    static let scrollEnabled: Bool = false
 }

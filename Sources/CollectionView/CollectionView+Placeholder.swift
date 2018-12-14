@@ -15,8 +15,6 @@ public protocol CollectionViewPlaceholderDataSource: class {
     func descriptionForPlaceholder(in collectionView: UICollectionView) -> NSAttributedString?
     func imageTintColorForPlaceholder(in collectionView: UICollectionView) -> UIColor?
     func backgroundColorForPlaceholder(in collectionView: UICollectionView) -> UIColor?
-    func verticalOffsetForPlaceholder(in collectionView: UICollectionView) -> CGFloat
-    func verticalSpacesForPlaceholder(in collectionView: UICollectionView) -> [CGFloat]
     func titleMarginForPlaceholder(in collectionView: UICollectionView) -> CGFloat
     func descriptionMarginForPlaceholder(in collectionView: UICollectionView) -> CGFloat
     func customViewForPlaceholder(in collectionView: UICollectionView) -> UIView?
@@ -27,7 +25,7 @@ public protocol CollectionViewPlaceholderDelegate: class {
     func placeholderShouldDisplay(in collectionView: UICollectionView) -> Bool
     func placeholderTapEnabled(in collectionView: UICollectionView) -> Bool
     func placeholderScrollEnabled(in collectionView: UICollectionView) -> Bool
-    func placeholderDidTapEmptyView(in collectionView: UICollectionView)
+    func placeholderDidTap(in collectionView: UICollectionView)
     func placeholderWillAppear(in collectionView: UICollectionView)
     func placeholderDidAppear(in collectionView: UICollectionView)
     func placeholderWillDisappear(in collectionView: UICollectionView)
@@ -56,14 +54,6 @@ extension CollectionViewPlaceholderDataSource {
         return nil
     }
     
-    public func verticalOffsetForPlaceholder(in collectionView: UICollectionView) -> CGFloat {
-        return DefaultValue.verticalOffset
-    }
-    
-    public func verticalSpacesForPlaceholder(in collectionView: UICollectionView) -> [CGFloat] {
-        return DefaultValue.verticalSpaces
-    }
-    
     public func titleMarginForPlaceholder(in collectionView: UICollectionView) -> CGFloat {
         return DefaultValue.titleMargin
     }
@@ -80,18 +70,18 @@ extension CollectionViewPlaceholderDataSource {
 extension CollectionViewPlaceholderDelegate {
     
     public func placeholderShouldDisplay(in collectionView: UICollectionView) -> Bool {
-        return true
+        return DefaultValue.shouldDisplay
     }
     
     public func placeholderTapEnabled(in collectionView: UICollectionView) -> Bool {
-        return true
+        return DefaultValue.tapEnabled
     }
     
     public func placeholderScrollEnabled(in collectionView: UICollectionView) -> Bool {
-        return false
+        return DefaultValue.scrollEnabled
     }
     
-    public func placeholderDidTapEmptyView(in collectionView: UICollectionView) {
+    public func placeholderDidTap(in collectionView: UICollectionView) {
         
     }
     

@@ -15,8 +15,6 @@ public protocol TableViewPlaceholderDataSource: class {
     func descriptionForPlaceholder(in tableView: UITableView) -> NSAttributedString?
     func imageTintColorForPlaceholder(in tableView: UITableView) -> UIColor?
     func backgroundColorForPlaceholder(in tableView: UITableView) -> UIColor?
-    func verticalOffsetForPlaceholder(in tableView: UITableView) -> CGFloat
-    func verticalSpacesForPlaceholder(in tableView: UITableView) -> [CGFloat]
     func titleMarginForPlaceholder(in tableView: UITableView) -> CGFloat
     func descriptionMarginForPlaceholder(in tableView: UITableView) -> CGFloat
     func customViewForPlaceholder(in tableView: UITableView) -> UIView?
@@ -27,7 +25,7 @@ public protocol TableViewPlaceholderDelegate: class {
     func placeholderShouldDisplay(in tableView: UITableView) -> Bool
     func placeholderTapEnabled(in tableView: UITableView) -> Bool
     func placeholderScrollEnabled(in tableView: UITableView) -> Bool
-    func placeholderDidTapEmptyView(in tableView: UITableView)
+    func placeholderDidTap(in tableView: UITableView)
     func placeholderWillAppear(in tableView: UITableView)
     func placeholderDidAppear(in tableView: UITableView)
     func placeholderWillDisappear(in tableView: UITableView)
@@ -56,14 +54,6 @@ extension TableViewPlaceholderDataSource {
         return nil
     }
     
-    public func verticalOffsetForPlaceholder(in tableView: UITableView) -> CGFloat {
-        return DefaultValue.verticalOffset
-    }
-    
-    public func verticalSpacesForPlaceholder(in tableView: UITableView) -> [CGFloat] {
-        return DefaultValue.verticalSpaces
-    }
-    
     public func titleMarginForPlaceholder(in tableView: UITableView) -> CGFloat {
         return DefaultValue.titleMargin
     }
@@ -80,18 +70,18 @@ extension TableViewPlaceholderDataSource {
 extension TableViewPlaceholderDelegate {
     
     public func placeholderShouldDisplay(in tableView: UITableView) -> Bool {
-        return true
+        return DefaultValue.shouldDisplay
     }
     
     public func placeholderTapEnabled(in tableView: UITableView) -> Bool {
-        return true
+        return DefaultValue.tapEnabled
     }
     
     public func placeholderScrollEnabled(in tableView: UITableView) -> Bool {
-        return false
+        return DefaultValue.scrollEnabled
     }
     
-    public func placeholderDidTapEmptyView(in tableView: UITableView) {
+    public func placeholderDidTap(in tableView: UITableView) {
         
     }
     

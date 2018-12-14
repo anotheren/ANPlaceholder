@@ -12,20 +12,20 @@ public protocol PlaceholderCompatible {
     
     associatedtype PlaceholderCompatibleType
     
-    static var holder: PlaceholderBase<PlaceholderCompatibleType>.Type { get }
+    static var placeholder: PlaceholderBase<PlaceholderCompatibleType>.Type { get }
     
-    var holder: PlaceholderBase<PlaceholderCompatibleType> { get }
+    var placeholder: PlaceholderBase<PlaceholderCompatibleType> { get }
 }
 
 extension PlaceholderCompatible {
     
-    public static var holder: PlaceholderBase<Self>.Type {
+    public static var placeholder: PlaceholderBase<Self>.Type {
         get {
             return PlaceholderBase<Self>.self
         }
     }
     
-    public var holder: PlaceholderBase<Self> {
+    public var placeholder: PlaceholderBase<Self> {
         get {
             return PlaceholderBase(base: self)
         }
