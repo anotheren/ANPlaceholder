@@ -43,7 +43,7 @@ private var collectionViewPlaceholderViewKey: UInt8 = 0
 
 extension UICollectionView: PlaceholderViewAddable {
     
-    var cellsCount: Int {
+    var cellsTotalCount: Int {
         var count = 0
         if let dataSource = dataSource {
             let sections = dataSource.numberOfSections?(in: self) ?? 0
@@ -66,7 +66,7 @@ extension UICollectionView: PlaceholderViewAddable {
     func reloadPlaceholder() {
         guard let dataSource = placeholder.dataSource else { return }
         let shouldDisplay = placeholder.delegate?.placeholderShouldDisplay(in: self) ?? DefaultValue.shouldDisplay
-        guard shouldDisplay && cellsCount == 0 else {
+        guard shouldDisplay && cellsTotalCount == 0 else {
             if placeholder.isVisible {
                 invalidPlaceholder()
             }

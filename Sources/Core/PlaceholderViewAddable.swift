@@ -10,7 +10,7 @@ import UIKit
 
 protocol PlaceholderViewAddable {
     
-    var cellsCount: Int { get }
+    var cellsTotalCount: Int { get }
     var placeholderView: PlaceholderView? { get set }
     
     func reloadPlaceholder()
