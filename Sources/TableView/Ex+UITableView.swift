@@ -89,7 +89,9 @@ extension UITableView: PlaceholderViewAddable {
             if let view = self.placeholderView {
                 return view
             } else {
-                let view = PlaceholderView(frame: bounds)
+                let origin = CGPoint(x: bounds.origin.x-contentInset.left, y: bounds.origin.y)
+                let _frame = CGRect(origin: origin, size: bounds.size)
+                let view = PlaceholderView(frame: _frame)
                 view.isHidden = true
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapPlaceholderView(_:)))
                 view.addGestureRecognizer(tapGesture)

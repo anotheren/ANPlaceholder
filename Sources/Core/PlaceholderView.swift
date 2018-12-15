@@ -69,7 +69,6 @@ final class PlaceholderView: UIView {
     }
     
     override func didMoveToSuperview() {
-        frame = super.bounds
         UIView.animate(withDuration: 0.25) {
             self.contentView.alpha = 1
         }

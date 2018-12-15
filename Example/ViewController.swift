@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         collectionView.backgroundColor = UIColor.lightGray
         collectionView.placeholder.dataSource = self
         collectionView.placeholder.delegate = self
