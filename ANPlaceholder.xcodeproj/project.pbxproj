@@ -17,7 +17,6 @@
 		A0C1DA9C21C37736004E9627 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F0E7B221C25565009E9BF7 /* SnapKit.framework */; };
 		A0F0E7AC21C23719009E9BF7 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */; };
 		A0F0E7AE21C23F0A009E9BF7 /* PlaceholderConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */; };
-		A0F0E7B021C254AA009E9BF7 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = A0F0E7AF21C254AA009E9BF7 /* Cartfile */; };
 		A0F0E7B321C25565009E9BF7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F0E7B221C25565009E9BF7 /* SnapKit.framework */; };
 		A0FF02DD21C20E6B00899B08 /* ANPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0FF02DB21C20E6B00899B08 /* ANPlaceholder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0FF02E421C20F6600899B08 /* SwizzleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF02E321C20F6600899B08 /* SwizzleHelper.swift */; };
@@ -283,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F0E7B021C254AA009E9BF7 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
