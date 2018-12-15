@@ -12,19 +12,38 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 20
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.contentInset = UIEdgeInsets(top: 30, left: 20, bottom: 20, right: 20)
+        view.backgroundColor = UIColor.lightGray
+        view.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        view.dataSource = self
+        view.delegate = self
+        view.placeholder.dataSource = self
+        view.placeholder.delegate = self
+        return view
+    }()
+    
+    private lazy var placeholderView: CustomPlaceholderView = {
+        let view = CustomPlaceholderView(frame: .zero)
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
-        collectionView.backgroundColor = UIColor.lightGray
-        collectionView.placeholder.dataSource = self
-        collectionView.placeholder.delegate = self
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { maker in
+            maker.edges.equalTo(view.snp.edges)
+        }
     }
 }
 
 extension ViewController: CollectionViewPlaceholderDataSource {
     
+    /*
     func titleForPlaceholder(in collectionView: UICollectionView) -> NSAttributedString? {
         var attributes = [NSAttributedString.Key: Any]()
         attributes[.font] = UIFont.systemFont(ofSize: 26, weight: .medium)
@@ -41,6 +60,11 @@ extension ViewController: CollectionViewPlaceholderDataSource {
     
     func backgroundColorForPlaceholder(in collectionView: UICollectionView) -> UIColor? {
         return UIColor.white
+    }
+     */
+    
+    func customViewForPlaceholder(in collectionView: UICollectionView) -> UIView? {
+        return placeholderView
     }
 }
 

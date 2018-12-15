@@ -76,7 +76,7 @@ extension UICollectionView: PlaceholderViewAddable {
             if let view = self.placeholderView {
                 return view
             } else {
-                let origin = CGPoint(x: bounds.origin.x-contentInset.left, y: bounds.origin.y)
+                let origin = CGPoint(x: bounds.origin.x, y: bounds.origin.x-contentInset.top)
                 let _frame = CGRect(origin: origin, size: bounds.size)
                 let view = PlaceholderView(frame: _frame)
                 view.isHidden = true

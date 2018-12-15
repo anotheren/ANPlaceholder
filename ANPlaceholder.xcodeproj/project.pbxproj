@@ -15,6 +15,7 @@
 		A0C1DA9621C3769F004E9627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C1DA9421C3769F004E9627 /* LaunchScreen.storyboard */; };
 		A0C1DA9B21C376F1004E9627 /* ANPlaceholder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FF02D821C20E6B00899B08 /* ANPlaceholder.framework */; };
 		A0C1DA9C21C37736004E9627 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F0E7B221C25565009E9BF7 /* SnapKit.framework */; };
+		A0CD04EF21C4A01C008FAD58 /* CustomPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD04EE21C4A01C008FAD58 /* CustomPlaceholderView.swift */; };
 		A0F0E7AC21C23719009E9BF7 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */; };
 		A0F0E7AE21C23F0A009E9BF7 /* PlaceholderConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */; };
 		A0F0E7B321C25565009E9BF7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F0E7B221C25565009E9BF7 /* SnapKit.framework */; };
@@ -40,6 +41,7 @@
 		A0C1DA9221C3769F004E9627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0C1DA9521C3769F004E9627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0C1DA9721C3769F004E9627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0CD04EE21C4A01C008FAD58 /* CustomPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaceholderView.swift; sourceTree = "<group>"; };
 		A0F0E7AB21C23719009E9BF7 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		A0F0E7AD21C23F0A009E9BF7 /* PlaceholderConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderConst.swift; sourceTree = "<group>"; };
 		A0F0E7AF21C254AA009E9BF7 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				A0C1DA8B21C3769C004E9627 /* AppDelegate.swift */,
 				A0C1DA8D21C3769C004E9627 /* ViewController.swift */,
+				A0CD04EE21C4A01C008FAD58 /* CustomPlaceholderView.swift */,
 				A0C1DA8F21C3769C004E9627 /* Main.storyboard */,
 				A0C1DA9221C3769F004E9627 /* Assets.xcassets */,
 				A0C1DA9421C3769F004E9627 /* LaunchScreen.storyboard */,
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C1DA8E21C3769C004E9627 /* ViewController.swift in Sources */,
+				A0CD04EF21C4A01C008FAD58 /* CustomPlaceholderView.swift in Sources */,
 				A0C1DA8C21C3769C004E9627 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
