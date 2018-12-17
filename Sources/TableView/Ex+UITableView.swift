@@ -58,7 +58,7 @@ extension UITableView: PlaceholderViewAddable {
     var cellsTotalCount: Int {
         var count = 0
         if let dataSource = dataSource {
-            let sections = dataSource.numberOfSections?(in: self) ?? 0
+            let sections = dataSource.numberOfSections?(in: self) ?? 1
             for section in 0..<sections {
                 count += dataSource.tableView(self, numberOfRowsInSection: section)
             }
