@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CollectionViewController.swift
 //  ANPlaceholder-Example
 //
 //  Created by 刘栋 on 2018/12/14.
@@ -10,7 +10,7 @@ import UIKit
 import ANPlaceholder
 import SnapKit
 
-class ViewController: UIViewController {
+class CollectionViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: CollectionViewPlaceholderDataSource {
+extension CollectionViewController: CollectionViewPlaceholderDataSource {
     
     /*
     func titleForPlaceholder(in collectionView: UICollectionView) -> NSAttributedString? {
@@ -74,10 +74,10 @@ extension ViewController: CollectionViewPlaceholderDataSource {
     }
 }
 
-extension ViewController: CollectionViewPlaceholderDelegate {
+extension CollectionViewController: CollectionViewPlaceholderDelegate {
     
-    func placeholderDidTap(in collectionView: UICollectionView) {
-        print("placeholderDidTap")
+    func placeholderDidTapped(in collectionView: UICollectionView) {
+        print("placeholderDidTapped")
     }
     
     func placeholderWillAppear(in collectionView: UICollectionView) {
@@ -97,7 +97,7 @@ extension ViewController: CollectionViewPlaceholderDelegate {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension CollectionViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -110,12 +110,11 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ViewCell
         cell.titleLabel.text = "\(indexPath.row)"
-        
         return cell
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension CollectionViewController: UICollectionViewDelegate {
     
 }
 

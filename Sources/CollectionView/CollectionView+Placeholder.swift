@@ -25,7 +25,7 @@ public protocol CollectionViewPlaceholderDelegate: class {
     func placeholderShouldDisplay(in collectionView: UICollectionView) -> Bool
     func placeholderTapEnabled(in collectionView: UICollectionView) -> Bool
     func placeholderScrollEnabled(in collectionView: UICollectionView) -> Bool
-    func placeholderDidTap(in collectionView: UICollectionView)
+    func placeholderDidTapped(in collectionView: UICollectionView)
     func placeholderWillAppear(in collectionView: UICollectionView)
     func placeholderDidAppear(in collectionView: UICollectionView)
     func placeholderWillDisappear(in collectionView: UICollectionView)
@@ -81,7 +81,7 @@ extension CollectionViewPlaceholderDelegate {
         return DefaultValue.scrollEnabled
     }
     
-    public func placeholderDidTap(in collectionView: UICollectionView) {
+    public func placeholderDidTapped(in collectionView: UICollectionView) {
         
     }
     
