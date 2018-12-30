@@ -25,7 +25,7 @@ public protocol TableViewPlaceholderDelegate: class {
     func placeholderShouldDisplay(in tableView: UITableView) -> Bool
     func placeholderTapEnabled(in tableView: UITableView) -> Bool
     func placeholderScrollEnabled(in tableView: UITableView) -> Bool
-    func placeholderDidTap(in tableView: UITableView)
+    func placeholderDidTapped(in tableView: UITableView)
     func placeholderWillAppear(in tableView: UITableView)
     func placeholderDidAppear(in tableView: UITableView)
     func placeholderWillDisappear(in tableView: UITableView)
@@ -81,7 +81,7 @@ extension TableViewPlaceholderDelegate {
         return DefaultValue.scrollEnabled
     }
     
-    public func placeholderDidTap(in tableView: UITableView) {
+    public func placeholderDidTapped(in tableView: UITableView) {
         
     }
     

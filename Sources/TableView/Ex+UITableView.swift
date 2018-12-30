@@ -153,6 +153,6 @@ extension UITableView: PlaceholderViewAddable {
 extension UITableView {
     
     @objc private func didTapPlaceholderView(_ sender: UITapGestureRecognizer) {
-        placeholder.delegate?.placeholderDidTap(in: self)
+        placeholder.delegate?.placeholderDidTapped(in: self)
     }
 }
