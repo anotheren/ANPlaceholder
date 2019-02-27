@@ -82,10 +82,6 @@ final class CustomPlaceholderView: UIView {
         addSubview(requestButton)
         addSubview(tipsTitleLabel)
         addSubview(tipsLabel)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
         imageView.snp.makeConstraints { maker in
             maker.top.equalTo(snp.top).offset(50)
             maker.centerX.equalTo(snp.centerX)
@@ -113,7 +109,4 @@ final class CustomPlaceholderView: UIView {
             maker.right.equalTo(snp.right).offset(-15)
         }
     }
-    
-    
-    
 }

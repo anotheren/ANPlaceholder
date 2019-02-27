@@ -40,16 +40,19 @@ class CollectionViewController: UIViewController {
         collectionView.snp.makeConstraints { maker in
             maker.edges.equalTo(view.snp.edges)
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+DispatchTimeInterval.seconds(2)) {
-            self.itemCount = 10
-            self.collectionView.reloadData()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+DispatchTimeInterval.seconds(2)) {
+//            self.itemCount = 10
+//            self.collectionView.reloadData()
+//        }
     }
 }
 
 extension CollectionViewController: CollectionViewPlaceholderDataSource {
     
-    /*
+    func imageForPlaceholder(in collectionView: UICollectionView) -> UIImage? {
+        return UIImage(named: "EmptyBillTitle")
+    }
+    
     func titleForPlaceholder(in collectionView: UICollectionView) -> NSAttributedString? {
         var attributes = [NSAttributedString.Key: Any]()
         attributes[.font] = UIFont.systemFont(ofSize: 26, weight: .medium)
@@ -67,7 +70,6 @@ extension CollectionViewController: CollectionViewPlaceholderDataSource {
     func backgroundColorForPlaceholder(in collectionView: UICollectionView) -> UIColor? {
         return UIColor.white
     }
-     */
     
     func customViewForPlaceholder(in collectionView: UICollectionView) -> UIView? {
         return placeholderView

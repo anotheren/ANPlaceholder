@@ -76,9 +76,7 @@ extension UICollectionView: PlaceholderViewAddable {
             if let view = self.placeholderView {
                 return view
             } else {
-                let origin = CGPoint(x: bounds.origin.x, y: bounds.origin.x-contentInset.top)
-                let _frame = CGRect(origin: origin, size: bounds.size)
-                let view = PlaceholderView(frame: _frame)
+                let view = PlaceholderView(frame: bounds)
                 view.isHidden = true
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapPlaceholderView(_:)))
                 view.addGestureRecognizer(tapGesture)
@@ -122,7 +120,6 @@ extension UICollectionView: PlaceholderViewAddable {
         isScrollEnabled = placeholder.delegate?.placeholderScrollEnabled(in: self) ?? DefaultValue.scrollEnabled
         
         placeholderView.setupConstraints()
-        placeholderView.layoutIfNeeded()
         
         placeholder.delegate?.placeholderDidAppear(in: self)
     }
