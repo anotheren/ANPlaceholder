@@ -38,12 +38,8 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { maker in
-            maker.edges.equalTo(view.snp.edges)
+            maker.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+DispatchTimeInterval.seconds(2)) {
-//            self.itemCount = 10
-//            self.collectionView.reloadData()
-//        }
     }
 }
 
