@@ -59,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A068AB0323698B0500C6D765 /* ANPlaceholder.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ANPlaceholder.podspec; sourceTree = "<group>"; };
 		A0C1DA7E21C355BA004E9627 /* PlaceholderViewAddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewAddable.swift; sourceTree = "<group>"; };
 		A0C1DA8921C3769C004E9627 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C1DA8B21C3769C004E9627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 				A0FF02F921C2220700899B08 /* LICENSE */,
 				A0FF02FA21C2220700899B08 /* README.md */,
 				A0F0E7AF21C254AA009E9BF7 /* Cartfile */,
+				A068AB0323698B0500C6D765 /* ANPlaceholder.podspec */,
 				A0FF02DA21C20E6B00899B08 /* Sources */,
 				A0C1DA8A21C3769C004E9627 /* Example */,
 				A0FF02D921C20E6B00899B08 /* Products */,
@@ -597,6 +599,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anotheren.ANPlaceholder;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -630,6 +633,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anotheren.ANPlaceholder;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
