@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '10.0'
     s.swift_versions = ['5.0', '5.1']
     s.source_files = 'Sources/**/*.swift'
-    s.resources = 'Sources/Resources/**/*'
     s.frameworks = 'Foundation'
     s.dependency 'SnapKit'
   end
